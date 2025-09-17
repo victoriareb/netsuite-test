@@ -1,5 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
+from fastapi import Response
 import httpx
 import io
 
@@ -36,12 +37,13 @@ async def get_image():
                 raise HTTPException(status_code=400, detail="URL does not point to a PNG image")
             
             # Stream the image data back
-            return StreamingResponse(
-                io.BytesIO(response.content),
+            return Response(
+                content=response.content,
                 media_type="image/png",
                 headers={
                     "Content-Disposition": "inline",
-                    "Cache-Control": "public, max-age=3600"
+                    "Cache-Control": "public, max-age=3600",
+                    "Content-Length": str(len(response.content))  # 👈 ensure length
                 }
             )
             
