@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello, world!"}
+    return {"message": "Hello, NetSuite!"}
 
 @app.get("/ping")
 def ping():
