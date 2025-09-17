@@ -24,6 +24,7 @@ async def get_image():
         
     Returns:
         StreamingResponse: The image data with proper headers
+        sth
     """
     try:
         url = "https://marketplace.canva.com/EAFEHtKS9p4/2/0/1131w/canva-blue-modern-creative-professional-company-invoice-KuVdlrcyWPE.jpg"
