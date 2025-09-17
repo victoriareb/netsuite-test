@@ -26,7 +26,7 @@ async def get_image():
         StreamingResponse: The image data with proper headers
     """
     try:
-        url = "https://www.billdu.com/wp-content/uploads/2023/02/free-invoice-template-for-sole-traders-australia.png"
+        url = "https://marketplace.canva.com/EAFEHtKS9p4/2/0/1131w/canva-blue-modern-creative-professional-company-invoice-KuVdlrcyWPE.jpg"
         async with httpx.AsyncClient() as client:
             response = await client.get(url)
             response.raise_for_status()
